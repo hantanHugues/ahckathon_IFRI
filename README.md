@@ -1,17 +1,51 @@
-## Running React on Replit
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+# Interface de Monitoring Embarqué
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+## État Actuel du Projet
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+En raison des contraintes de temps et de ressources, seules les fonctionnalités essentielles ont été implémentées :
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+### Fonctionnalités Opérationnelles
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
+1. **Acquisition des Données**
+   - Réception des données via MQTT depuis le dispositif ESP32
+   - Topic MQTT : "patient/esp32-c40a24/data"
+   - Paramètres surveillés : température, pouls, créatinine
 
-### Typescript
+2. **Stockage des Données**
+   - Persistance dans InfluxDB Cloud
+   - Organisation : ac9c12a5970cc113
+   - Bucket : Hackathon
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+3. **Interface Utilisateur**
+   - Dashboard principal avec affichage en temps réel
+   - Graphiques d'évolution des paramètres
+   - Système d'alertes basé sur des seuils
+
+### Architecture Technique
+
+- **Frontend** : React + TypeScript
+- **Backend** : Express.js
+- **Communication** : MQTT via HiveMQ
+- **Base de données** : InfluxDB Cloud
+
+### Flux de Données
+1. L'ESP32 envoie les données via MQTT
+2. Le serveur Node.js reçoit et traite les données
+3. Stockage dans InfluxDB Cloud
+4. Affichage en temps réel sur le dashboard
+
+### Limitations Actuelles
+- Interface limitée au dashboard principal
+- Fonctionnalités avancées de gestion des dispositifs non implémentées
+- Configuration des seuils d'alerte simplifiée
+- Authentification basique
+
+## Démarrage
+
+```bash
+npm install
+npm run dev
+```
+
+Le serveur démarre sur le port 5000 et l'interface est accessible via le navigateur.

@@ -32,7 +32,7 @@ class MQTTClient {
     console.log('Tentative de connexion au broker MQTT via WebSocket');
     
     // Utiliser WebSocket pour la connexion dans le navigateur
-    const websocketUrl = brokerUrl.replace('mqtt://', 'ws://').replace(':1883', ':8000/mqtt');
+    const websocketUrl = 'wss://broker.hivemq.com:8884/mqtt';
     
     // Options par défaut
     const defaultOptions = {

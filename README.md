@@ -91,5 +91,7 @@ En raison des contraintes de temps et de ressources, seules les fonctionnalités
 - Configuration des seuils d'alerte simplifiée
 - Authentification basique
 
-## Démo de l’application
+
+
+
 

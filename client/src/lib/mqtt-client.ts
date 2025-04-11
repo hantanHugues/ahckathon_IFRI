@@ -32,8 +32,7 @@ class MQTTClient {
     console.log('Tentative de connexion au broker MQTT via WebSocket');
     
     // Utiliser WebSocket pour la connexion dans le navigateur
-    // Dans le navigateur, nous devons utiliser l'URL du broker comme fournie
-    const websocketUrl = brokerUrl;
+    const websocketUrl = brokerUrl.replace('mqtt://', 'ws://').replace(':1883', ':8000/mqtt');
     
     // Options par défaut
     const defaultOptions = {

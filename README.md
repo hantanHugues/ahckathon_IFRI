@@ -84,9 +84,12 @@ En raison des contraintes de temps et de ressources, seules les fonctionnalités
    - Système d'alertes basé sur des seuils
    - Graphiques d'évolution des paramètres
    - Statut de connexion MQTT
-
+  
 ### Limitations Actuelles
 - Interface limitée au dashboard principal
 - Fonctionnalités avancées de gestion des dispositifs non implémentées
 - Configuration des seuils d'alerte simplifiée
 - Authentification basique
+
+## Démo de l’application
+

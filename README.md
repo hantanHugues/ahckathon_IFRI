@@ -3,7 +3,7 @@
 
 ## État Actuel du Projet
 
-En raison des contraintes de temps et de ressources, seules les fonctionnalités essentielles ont été implémentées :
+En raison des contraintes de temps et de ressources, seules les fonctionnalités essentielles ont été implémentées.
 
 ### Fonctionnalités Opérationnelles
 
@@ -41,6 +41,45 @@ En raison des contraintes de temps et de ressources, seules les fonctionnalités
 - Configuration des seuils d'alerte simplifiée
 - Authentification basique
 
+## Fonctionnalités Principales
+
+### 1. Tableau de Bord (/dashboard)
+- Affichage en temps réel des mesures :
+  - Température corporelle
+  - Pouls
+  - Taux de créatinine
+- Graphiques d'évolution temporelle
+- Tableaux de données historiques
+
+### 2. Gestion des Dispositifs (/devices)
+- Liste des matelas connectés
+- État de connexion
+- Informations sur le patient
+- Assignation des chambres
+
+### 3. Alertes (/alerts)
+- Système de notification en temps réel
+- Seuils d'alerte configurables
+- Historique des alertes
+- Classification par niveau de gravité
+
+### 4. Paramètres (/settings)
+- Configuration des seuils d'alerte
+- Gestion des périodes de rétention
+- Paramètres de fréquence d'échantillonnage
+
+## Sécurité
+- Authentification MQTT
+- Stockage sécurisé des tokens
+- Validation des données
+- Protection des routes sensibles
+
+## Interface Utilisateur
+- Design responsive
+- Thème clair/sombre
+- Composants modulaires
+- Indicateurs visuels d'état
+
 ## Démarrage
 
 ```bash
@@ -49,3 +88,15 @@ npm run dev
 ```
 
 Le serveur démarre sur le port 5000 et l'interface est accessible via le navigateur.
+
+## Configuration Technique
+
+### MQTT
+- Broker : broker.hivemq.com
+- Port WebSocket : 8884 (WSS)
+- Topic : patient/esp32-c40a24/data
+
+### InfluxDB
+- URL : https://eu-central-1-1.aws.cloud2.influxdata.com
+- Organisation : ac9c12a5970cc113
+- Bucket : Hackathon

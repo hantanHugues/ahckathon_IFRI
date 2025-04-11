@@ -4,7 +4,7 @@ import { TimeSeriesPoint, SensorData } from '@shared/schema';
 
 // Configuration InfluxDB Cloud
 let url = 'https://eu-central-1-1.aws.cloud2.influxdata.com';
-const token = 'HfFC0e_yzfgNxSR9QJUcBqwC3LnMyLn5-YyCdCr_Jq-M_kj4NyOE7wP8y_lQi4MPzWmN4_o3MOkaMz5ayFYq6A==';
+const token = 'T5B1g-NMoyHFxMw2P1nW2fGhb1m6PvXmFiRYLdhkp-6yd4zg8Oxq5iQ12mZJkryl_wSBpoGEja4y4WfoQZ4Pxw==';
 // Utiliser l'ID d'organisation directement
 let org = 'ac9c12a5970cc113';
 if (process.env.INFLUXDB_CLOUD_URL && process.env.INFLUXDB_CLOUD_URL.includes('/orgs/')) {

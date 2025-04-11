@@ -1,26 +1,6 @@
 
 # Interface de Monitoring Embarqué
 
-## Fonctionnalités Actuellement Opérationnelles
-
-En raison des contraintes de temps et de ressources, seules les fonctionnalités suivantes sont pleinement opérationnelles :
-
-1. **Acquisition des Données**
-   - Réception des données via MQTT depuis le dispositif ESP32
-   - Topic MQTT : "patient/esp32-c40a24/data"
-   - Paramètres surveillés : température, pouls, créatinine
-
-2. **Stockage des Données**
-   - Persistance dans InfluxDB Cloud
-   - Organisation : ac9c12a5970cc113
-   - Bucket : Hackathon
-
-3. **Interface Utilisateur**
-   - Dashboard principal avec affichage en temps réel
-   - Système d'alertes basé sur des seuils
-   - Graphiques d'évolution des paramètres
-   - Statut de connexion MQTT
-
 ## Documentation Complète de l'Interface
 
 ### Architecture Technique
@@ -84,6 +64,26 @@ npm run dev
 ```
 
 Le serveur démarre sur le port 5000 et l'interface est accessible via le navigateur.
+
+## Fonctionnalités Actuellement Opérationnelles
+
+En raison des contraintes de temps et de ressources, seules les fonctionnalités suivantes sont pleinement opérationnelles :
+
+1. **Acquisition des Données**
+   - Réception des données via MQTT depuis le dispositif ESP32
+   - Topic MQTT : "patient/esp32-c40a24/data"
+   - Paramètres surveillés : température, pouls, créatinine
+
+2. **Stockage des Données**
+   - Persistance dans InfluxDB Cloud
+   - Organisation : ac9c12a5970cc113
+   - Bucket : Hackathon
+
+3. **Interface Utilisateur**
+   - Dashboard principal avec affichage en temps réel
+   - Système d'alertes basé sur des seuils
+   - Graphiques d'évolution des paramètres
+   - Statut de connexion MQTT
 
 ### Limitations Actuelles
 - Interface limitée au dashboard principal

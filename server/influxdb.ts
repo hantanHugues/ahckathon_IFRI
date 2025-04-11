@@ -4,7 +4,7 @@ import { TimeSeriesPoint, SensorData } from '@shared/schema';
 
 // Configuration InfluxDB
 // Extraire juste le domaine de base de l'URL InfluxDB Cloud
-let url = process.env.INFLUXDB_CLOUD_URL || 'http://127.0.0.1:8086';
+let url = process.env.INFLUXDB_CLOUD_URL || 'http://0.0.0.0:8086';
 // Si l'URL contient '/orgs/', supprimer cette partie et tout ce qui suit
 if (url && url.includes('/orgs/')) {
   url = url.split('/orgs/')[0];

@@ -2,16 +2,11 @@ import { InfluxDB, Point } from '@influxdata/influxdb-client';
 import { BucketsAPI } from '@influxdata/influxdb-client-apis';
 import { TimeSeriesPoint, SensorData } from '@shared/schema';
 
-// Configuration InfluxDB
-// Extraire juste le domaine de base de l'URL InfluxDB Cloud
-let url = process.env.INFLUXDB_CLOUD_URL || 'http://0.0.0.0:8086';
-// Si l'URL contient '/orgs/', supprimer cette partie et tout ce qui suit
-if (url && url.includes('/orgs/')) {
-  url = url.split('/orgs/')[0];
-}
-const token = process.env.INFLUXDB_TOKEN || ' HfFC0e_yzfgNxSR9QJUcBqwC3LnMyLn5-YyCdCr_Jq-M_kj4NyOE7wP8y_lQi4MPzWmN4_o3MOkaMz5ayFYq6A==';
-// Extraire l'identifiant d'organisation de l'URL si disponible
-let org = 'IFRI';
+// Configuration InfluxDB Cloud
+let url = 'https://eu-central-1-1.aws.cloud2.influxdata.com';
+const token = 'HfFC0e_yzfgNxSR9QJUcBqwC3LnMyLn5-YyCdCr_Jq-M_kj4NyOE7wP8y_lQi4MPzWmN4_o3MOkaMz5ayFYq6A==';
+// Extraire l'identifiant d'organisation
+let org = 'ac9c12a5970cc113';
 if (process.env.INFLUXDB_CLOUD_URL && process.env.INFLUXDB_CLOUD_URL.includes('/orgs/')) {
   const match = process.env.INFLUXDB_CLOUD_URL.match(/\/orgs\/([^\/]+)/);
   if (match && match[1]) {
